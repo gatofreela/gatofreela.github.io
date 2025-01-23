@@ -1,0 +1,55 @@
+{
+  "name": "website",
+  "type": "module",
+  "private": false,
+  "version": "0.0.0",
+  "license": "Apache-2.0",
+  "author": [
+    {
+      "name": "Sebastian Jn",
+      "email": "sebastianjnuwu@gmail.com",
+      "github": "sebastianjnuwu"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Sebastian Jn",
+      "email": "sebastianjnuwu@gmail.com",
+      "github": "sebastianjnuwu"
+    }
+  ],
+  "scripts": {
+    "test": "echo \"Test: yes that was a test!\" && exit 1",
+    "astro": "astro",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "lint": "npx @biomejs/biome lint --write",
+    "format": "npx @biomejs/biome format --write",
+    "prepare": "husky",
+    "pre-commit": "cz"
+  },
+  "hooks": {
+    "prepare-commit-msg": "npx --no -- commitlint --edit $1; exec < /dev/tty && npx cz --hook || true"
+  },
+  "dependencies": {
+    "astro": "^5.1.8",
+    "bootstrap": "^5.3.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^9.1.7",
+    "typescript": "^5.7.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatofreela/gatofreela.github.io.git"
+  },
+  "engines": {
+    "npm": ">=9",
+    "node": ">=20"
+  }
+}
