@@ -6,8 +6,7 @@ import HomeLayout from "../layouts/HomeLayout.astro";
   <article class="module">
     <header class="about">
       <h1>
-        Faça seu negócio crescer com o <span>melhor talento remoto</span> na América
-        Latina
+        Conecte-se aos <span>Melhores Talentos</span> Remotos da América Latina com o Gato Freela!
       </h1>
       <p>
         Desenvolva seu negócio de forma rápida e sustentável. Nós conectamos
@@ -16,59 +15,32 @@ import HomeLayout from "../layouts/HomeLayout.astro";
       </p>
     </header>
   </article>
-  <article class="module">
-    <div class="features">
-      <div class="service">
-        <header>
-          <h3>Precisa de Desenvolvedores?</h3>
-          <p>Encontre talento certificado em menos de uma semana.</p>
-        </header>
-        <ul>
-          <li>Front End Developer</li>
-          <li>Back End Developer</li>
-          <li>Full Stack Developer</li>
-          <li>Mobile Developer</li>
-        </ul>
-      </div>
-      <div class="service">
-        <header>
-          <h3>Precisa de um Freelancer?</h3>
-          <p>Em qual área de especialização?</p>
-        </header>
-        <ul>
-          <li>Design & Multimídia</li>
-          <li>Tradução & Escrita</li>
-          <li>Suporte Administrativo</li>
-          <li>Marketing & Vendas</li>
-        </ul>
-      </div>
-    </div>
-  </article>
 </HomeLayout>
 
 <style>
   .module {
-    margin: 2rem 0;
+    margin: 2rem 0 2rem 8rem;
     padding: 2rem;
     background: var(--purple-900);
+    width: 38rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   /* About styles */
   .about {
-    text-align: center;
+    text-align: left;
   }
 
   .about h1 {
-    font-size: 2rem;
-    color: var(--gray-100);
+    font-size: 2.313rem;
+    color: var(--white);
     font-weight: 700;
     line-height: 1.4;
   }
 
   .about h1 span {
-    color: var(--green-500);
+    color: var(--cyan-100);
   }
 
   .about p {
@@ -78,44 +50,4 @@ import HomeLayout from "../layouts/HomeLayout.astro";
     line-height: 1.5;
   }
 
-  /* Feature styles */
-  .features {
-    display: flex;
-    gap: 2rem;
-    justify-content: space-between;
-  }
-
-  .service {
-    flex: 1;
-    padding: 1.5rem;
-    background: var(--purple-700);
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  .service header h3 {
-    font-size: 1.25rem;
-    color: var(--gray-100);
-    margin-bottom: 0.5rem;
-  }
-
-  .service header p {
-    font-size: 0.95rem;
-    color: var(--gray-300);
-    margin-bottom: 1rem;
-  }
-
-  .service ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    color: var(--gray-300);
-    text-align: left;
-  }
-
-  .service ul li {
-    font-size: 0.875rem;
-    margin-bottom: 0.5rem;
-  }
 </style>
