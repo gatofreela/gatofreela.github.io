@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/global.css";
+import "../styles/variables.css";
+
+import { mockUserClient } from "../mock/user";
+---
+
+<BaseLayout>
+  <h1>Signup client</h1>
+  <a href={`/client/${mockUserClient.name.toLowerCase().replace(/\s+/g, "-")}`}> Client</a>
+</BaseLayout>
+
+
+<style>
+  
+</style>

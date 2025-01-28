@@ -1,0 +1,41 @@
+---
+import HomeLayout from "../../layouts/HomeLayout.astro";
+import { mockUserClient } from "../../mock/user";
+
+// Função para gerar as rotas dinâmicas
+export async function getStaticPaths() {
+  // Gera as rotas com base no mock do usuário cliente
+  return [
+    {
+      params: {
+        username: mockUserClient.name.toLowerCase().replace(/\s+/g, "-"), // "client-teste"
+      },
+    },
+  ];
+}
+
+// Obtendo o username da URL
+const { username } = Astro.params;
+
+// Simulação de dados com base no mock do cliente
+const clientData =
+  mockUserClient.name.toLowerCase().replace(/\s+/g, "-") === username
+    ? mockUserClient
+    : null;
+
+// Tratamento para casos em que o cliente não é encontrado
+if (!clientData) {
+  throw new Error(`Cliente com username '${username}' não foi encontrado.`);
+}
+---
+
+<HomeLayout name={clientData.name} role={clientData.role}>
+  <article class="module">
+    <header class="about">
+      <h1>Bem-vindo à página inicial do Cliente, {clientData.name}!</h1>
+      <p>
+        Gerencie seus projetos e contrate os melhores desenvolvedores na Gato Freela.
+      </p>
+    </header>
+  </article>
+</HomeLayout>

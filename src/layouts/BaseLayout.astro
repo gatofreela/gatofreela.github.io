@@ -4,9 +4,6 @@ import "../styles/variables.css";
 import "../styles/global.css";
 
 import Header from "../components/Header.astro";
-import Sidebar from "../components/Sidebar.astro";
-
-const { name, role } = Astro.props;
 ---
 
 <!doctype html>
@@ -72,26 +69,19 @@ const { name, role } = Astro.props;
   <body>
     <div>
       <Header />
-
-      <div class="wrapper">
-        <Sidebar name={name} role={role} />
-        <main>
-          <slot />
-        </main>
-      </div>
+      <main>
+        <slot />
+      </main>
     </div>
   </body>
 </html>
 
 <style>
-  .wrapper {
-    max-width: 70rem;
-    margin: 2rem auto;
-    padding: 0 1rem;
-
-    display: grid;
-    grid-template-columns: 256px 1fr;
-    gap: 2rem;
-    align-items: flex-start;
+  main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
   }
 </style>
