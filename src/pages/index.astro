@@ -1,8 +1,114 @@
 ---
-import Default from "../components/default.astro";
-import Layout from "../layouts/Layout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<Layout>
-	<Default />
-</Layout>
+<BaseLayout>
+  <a href="/signup-developer">
+    <aside class="sidebar">
+      <h1>Eu quero trabalhar</h1>
+      <h3>
+        Encontre <span>projetos incríveis</span> para mostrar suas habilidades!
+      </h3>
+    </aside>
+  </a>
+  <a href="/signup-client">
+    <aside class="sidebar">
+      <h1>Eu quero contratar</h1>
+      <h3>Conecte-se aos <span>melhores talentos</span> para seus projetos!</h3>
+    </aside>
+  </a>
+</BaseLayout>
+
+<style>
+  a {
+    text-decoration: none;
+  }
+
+  .sidebar {
+    width: 15.625rem;
+    height: 14.375rem;
+
+    background: var(--purple-400);
+    box-shadow: 0px 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+    border-radius: 0.5rem;
+    border: 0.0625rem solid transparent;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    padding: 1.25rem
+    transition: border 0.3s ease-in-out;
+  }
+
+  .sidebar:nth-of-type(1) {
+    margin: 4rem;
+  }
+
+  .sidebar:hover {
+    border: 1px solid rgba(173, 99, 252, 0.5);
+  }
+
+  .sidebar h1 {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.1875rem;
+    color: var(--white);
+
+    margin-bottom: 1rem;
+  }
+
+  .sidebar h3 {
+    width: 10rem;
+
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+
+    word-wrap: break-word;
+    line-height: 1.1875rem;
+
+    color: var(--gray-100);
+  }
+
+  .sidebar h3 span {
+    color: var(--cyan-100);
+  }
+
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 90%;
+      height: auto;
+      padding: 1rem;
+    }
+
+    .sidebar h1 {
+      font-size: 1.125rem;
+    }
+
+    .sidebar h3 {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sidebar {
+      width: 100%;
+      padding: 1rem;
+    }
+
+    .sidebar h1 {
+      font-size: 1.25rem;
+    }
+
+    .sidebar h3 {
+      font-size: 1.125rem;
+    }
+  }
+</style>

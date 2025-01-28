@@ -1,0 +1,97 @@
+---
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles/variables.css";
+import "../styles/global.css";
+
+import Header from "../components/Header.astro";
+import Sidebar from "../components/Sidebar.astro";
+
+const { name, role } = Astro.props;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <!-- Configurações Básicas -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <!-- Ícone do Site -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://cdn.discordapp.com/attachments/1287429295156760749/1332013603443834982/22_Sem_Titulo_20250123122407.png?ex=6793b5d6&is=67926456&hm=1deef6d6fcd607a38969daff4b04cabb87f70d718034f21a1df5d9ee797119c4&"
+    />
+    <!-- Título e Básico -->
+    <title>Gato Freela - Brasil</title>
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="description"
+      content="Uma plataforma brasileira que conecta freelancers a clientes de forma ágil, simples e confiável e totalmente de código aberto."
+    />
+    <meta
+      name="keywords"
+      content="Gato Freela, freelancing, trabalho remoto, vagas de freelancer, projetos online, plataforma de freelancers, freelance Brasil, serviços online, design, tecnologia, marketing, desenvolvimento web, redatores, criativos, trabalho digital, profissionais autônomos"
+    />
+    <!-- Open Graph (OG) para Redes Sociais -->
+    <meta name="og:title" content="Gato Freela - Brasil" />
+    <meta
+      name="og:description"
+      content="Conecte-se com os melhores freelancers ou encontre projetos incríveis para trabalhar, com foco no mercado brasileiro e código aberto!"
+    />
+    <meta
+      name="og:image"
+      content="https://cdn.discordapp.com/attachments/1287429295156760749/1332013603443834982/22_Sem_Titulo_20250123122407.png?ex=6793b5d6&is=67926456&hm=1deef6d6fcd607a38969daff4b04cabb87f70d718034f21a1df5d9ee797119c4&"
+    />
+    <meta name="og:url" content="https://gatofreela.github.io/" />
+    <meta name="og:type" content="website" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Gato Freela - Brasil" />
+    <meta
+      name="twitter:description"
+      content="Encontre freelancers talentosos ou publique seus projetos. O Gato Freela é a plataforma ideal para conectar profissionais e clientes no Brasil."
+    />
+    <meta
+      name="twitter:image"
+      content="https://cdn.discordapp.com/attachments/1287429295156760749/1332013603443834982/22_Sem_Titulo_20250123122407.png?ex=6793b5d6&is=67926456&hm=1deef6d6fcd607a38969daff4b04cabb87f70d718034f21a1df5d9ee797119c4&"
+    />
+    <!-- Outras Informações -->
+    <meta name="generator" content={Astro.generator} />
+    <!-- Pré-conexão e Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div>
+      <Header />
+
+      <div class="wrapper">
+        <Sidebar name={name} role={role} />
+        <main>
+          <slot />
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
+
+<style>
+  .wrapper {
+    max-width: 70rem;
+    margin: 2rem auto;
+    padding: 0 1rem;
+
+    display: grid;
+    grid-template-columns: 256px 1fr;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+</style>
