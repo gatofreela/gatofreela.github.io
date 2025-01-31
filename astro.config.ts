@@ -5,7 +5,7 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "server",
+  output: "static",
   outDir: "build",
 
   server: {
@@ -13,5 +13,7 @@ export default defineConfig({
     host: true,
   },
 
-  integrations: [react({ experimentalReactChildren: true, include: ['**/react/*'] })],
+  integrations: [
+    react({ experimentalReactChildren: true, include: ["**/react/*"] }),
+  ],
 });
