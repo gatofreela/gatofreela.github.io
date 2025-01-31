@@ -1,27 +1,28 @@
 ---
-import HomeLayout from "../../layouts/HomeLayout.astro";
+import LayoutHome from "../../layouts/LayoutHome.astro";
 import { mockUserClient } from "../../mock/user";
 
-// Função para gerar as rotas dinâmicas
+// Função para gerar as rotas dinâmicas corretamente
 export async function getStaticPaths() {
-  // Gera as rotas com base no mock do usuário cliente
-  return [
-    {
-      params: {
-        username: mockUserClient.name.toLowerCase().replace(/\s+/g, "-"), // "client-teste"
-      },
-    },
-  ];
+  // Garantindo que mockUserClient seja tratado corretamente como array
+  const clients = Array.isArray(mockUserClient)
+    ? mockUserClient
+    : [mockUserClient];
+
+  return clients.map((client) => ({
+    params: { username: client.username },
+  }));
 }
 
 // Obtendo o username da URL
 const { username } = Astro.params;
 
-// Simulação de dados com base no mock do cliente
+// Definindo `clients` novamente dentro do escopo correto
+const clients = Array.isArray(mockUserClient)
+  ? mockUserClient
+  : [mockUserClient];
 const clientData =
-  mockUserClient.name.toLowerCase().replace(/\s+/g, "-") === username
-    ? mockUserClient
-    : null;
+  clients.find((client) => client.username === username) || null;
 
 // Tratamento para casos em que o cliente não é encontrado
 if (!clientData) {
@@ -29,7 +30,7 @@ if (!clientData) {
 }
 ---
 
-<HomeLayout name={clientData.name} role={clientData.role}>
+<LayoutHome name={clientData.name} role={clientData.role}>
   <article class="module">
     <header class="about">
       <h1>Bem-vindo à página inicial do Cliente, {clientData.name}!</h1>
@@ -38,4 +39,4 @@ if (!clientData) {
       </p>
     </header>
   </article>
-</HomeLayout>
+</LayoutHome>

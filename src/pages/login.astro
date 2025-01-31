@@ -1,0 +1,78 @@
+---
+import LayoutBase from "../layouts/LayoutBase.astro";
+import "../styles/global.css";
+import "../styles/variables.css";
+---
+
+<LayoutBase>
+  <form class="login-form">
+    <h2>Login</h2>
+
+    <p class="error" id="error-general"></p>
+
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required />
+    <p class="error" id="error-email"></p>
+
+    <label for="password">Senha:</label>
+    <input type="password" id="password" name="password" placeholder="Digite sua senha" required />
+    <p class="error" id="error-password"></p>
+
+    <button type="submit">Entrar</button>
+    <p>Não tem uma conta? <a href="/signup-client">Cadastre-se</a></p>
+  </form>
+
+  <a href="/client/client-test">/client/client-test</a>
+</LayoutBase>
+
+<style>
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 8px;
+    background: var(--gray-800);
+  }
+
+  .login-form h2 {
+    text-align: center;
+    color: var(--white);
+  }
+
+  .login-form label {
+    font-weight: bold;
+    color: var(--gray-300);
+  }
+
+  .login-form input {
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: 1px solid var(--gray-600);
+    background: var(--gray-900);
+    color: var(--white);
+  }
+
+  .login-form button {
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    border: 1px solid var(--green-500);
+    color: var(--white);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  .login-form button:hover {
+    background: var(--green-700);
+  }
+
+  .error {
+    color: var(--red-500);
+    font-size: 0.875rem;
+  }
+</style>

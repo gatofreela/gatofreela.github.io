@@ -4,7 +4,7 @@
   "exclude": ["build/", "node_modules/"],
   "compilerOptions": {
     "types": ["astro/client"],
-    "jsx": "preserve",
-    "jsxImportSource": "astro"
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }

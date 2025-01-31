@@ -1,0 +1,39 @@
+---
+import LayoutHome from "../../layouts/LayoutHome.astro";
+import { mockUserDev } from "../../mock/user";
+
+// Função para gerar as rotas dinâmicas corretamente
+export async function getStaticPaths() {
+  // Garantindo que mockUserDev seja tratado corretamente
+  const developers = Array.isArray(mockUserDev) ? mockUserDev : [mockUserDev];
+
+  return developers.map((developer) => ({
+    params: { username: developer.username },
+  }));
+}
+
+// Obtendo o username da URL
+const { username } = Astro.params;
+
+// Buscar o desenvolvedor correto
+const developers = Array.isArray(mockUserDev) ? mockUserDev : [mockUserDev];
+const developer = developers.find((dev) => dev.username === username) || null;
+
+// Tratamento para casos em que o desenvolvedor não é encontrado
+if (!developer) {
+  throw new Error(
+    `Desenvolvedor com username '${username}' não foi encontrado.`,
+  );
+}
+---
+
+<LayoutHome name={developer.name} role={developer.role}>
+  <article class="module">
+    <header class="about">
+      <h1>Bem-vindo à página inicial do Desenvolvedor, {developer.name}!</h1>
+      <p>
+        Explore projetos e colabore com clientes na Gato Freela.
+      </p>
+    </header>
+  </article>
+</LayoutHome>
