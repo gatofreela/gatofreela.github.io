@@ -1,14 +1,14 @@
 ---
 import LayoutHome from "../../layouts/LayoutHome.astro";
-import { mockUserClient } from "../../mock/user";
+import { mockUserDev } from "../../mock/user";
 
 // ✅ Certifique-se de que `mockUserClient` é um array
-const users = Array.isArray(mockUserClient) ? mockUserClient : [mockUserClient];
+const users = Array.isArray(mockUserDev) ? mockUserDev : [mockUserDev];
 
 // Função para gerar as rotas dinâmicas corretamente
 export async function getStaticPaths() {
-  return users.map((client) => ({
-    params: { username: client.username },
+  return users.map((developer) => ({
+    params: { username: developer.username },
   }));
 }
 
@@ -16,20 +16,21 @@ export async function getStaticPaths() {
 const { username } = Astro.params;
 
 // Encontrando o cliente correto
-const client = users.find((client) => client.username === username);
+const developer = users.find((developer) => developer.username === username);
 
 // Tratamento para casos em que o cliente não é encontrado
-if (!client) {
+if (!developer) {
   throw new Error(`Cliente com username '${username}' não foi encontrado.`);
 }
 ---
 
-<LayoutHome name={client.name} role={client.role}>
+<LayoutHome name={developer.name} role={developer.role}>
   <article class="module">
     <header class="about">
-      <h1>Bem-vindo à página inicial do Cliente, {client.name}!</h1>
+      <h1>Bem-vindo à página inicial do Cliente, {developer.name}!</h1>
       <p>
-        Gerencie seus projetos e contrate os melhores desenvolvedores na Gato Freela.
+        Gerencie seus projetos e contrate os melhores desenvolvedores na Gato
+        Freela.
       </p>
     </header>
   </article>

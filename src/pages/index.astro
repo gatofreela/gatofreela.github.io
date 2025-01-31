@@ -1,57 +1,56 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import LayoutBase from "../layouts/LayoutBase.astro";
 ---
 
-<BaseLayout>
-  <a href="/signup-developer">
-    <aside class="sidebar">
+<LayoutBase>
+  <section class="option">
+    <a href="/signup-developer">
       <h1>Eu quero trabalhar</h1>
       <h3>
         Encontre <span>projetos incríveis</span> para mostrar suas habilidades!
       </h3>
-    </aside>
-  </a>
-  <a href="/signup-client">
-    <aside class="sidebar">
+    </a>
+  </section>
+  <section class="option">
+    <a href="/signup-client">
       <h1>Eu quero contratar</h1>
       <h3>Conecte-se aos <span>melhores talentos</span> para seus projetos!</h3>
-    </aside>
-  </a>
-</BaseLayout>
+    </a>
+  </section>
+</LayoutBase>
 
 <style>
-  a {
-    text-decoration: none;
-  }
+.option {
+  width: 15.625rem;
+  height: 14.375rem;
+  background: var(--purple-400);
+  box-shadow: 0px 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem;
+  border: 0.0625rem solid transparent;
+  display: flex;
+  padding: 1.25rem;
+  transition: border 0.3s ease-in-out;
+}
 
-  .sidebar {
-    width: 15.625rem;
-    height: 14.375rem;
+.option a {
+  text-decoration: none;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-    background: var(--purple-400);
-    box-shadow: 0px 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
-    border-radius: 0.5rem;
-    border: 0.0625rem solid transparent;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
-    padding: 1.25rem
-    transition: border 0.3s ease-in-out;
-  }
-
-  .sidebar:nth-of-type(1) {
+  .option:nth-of-type(1) {
     margin: 4rem;
   }
 
-  .sidebar:hover {
+  .option:hover {
     border: 1px solid rgba(173, 99, 252, 0.5);
   }
 
-  .sidebar h1 {
+  .option h1 {
     font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -62,7 +61,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     margin-bottom: 1rem;
   }
 
-  .sidebar h3 {
+  .option h3 {
     width: 10rem;
 
     font-family: "Roboto", sans-serif;
@@ -76,38 +75,38 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     color: var(--gray-100);
   }
 
-  .sidebar h3 span {
+  .option h3 span {
     color: var(--cyan-100);
   }
 
   /* Responsividade */
   @media (max-width: 768px) {
-    .sidebar {
+    .option {
       width: 90%;
       height: auto;
       padding: 1rem;
     }
 
-    .sidebar h1 {
+    .option h1 {
       font-size: 1.125rem;
     }
 
-    .sidebar h3 {
+    .option h3 {
       font-size: 1rem;
     }
   }
 
   @media (max-width: 480px) {
-    .sidebar {
+    .option {
       width: 100%;
       padding: 1rem;
     }
 
-    .sidebar h1 {
+    .option h1 {
       font-size: 1.25rem;
     }
 
-    .sidebar h3 {
+    .option h3 {
       font-size: 1.125rem;
     }
   }
