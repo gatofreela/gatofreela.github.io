@@ -23,7 +23,7 @@ const { name, role } = Astro.props;
     <link
       rel="icon"
       type="image/png"
-      href="https://cdn.discordapp.com/attachments/1287429295156760749/1332013603443834982/22_Sem_Titulo_20250123122407.png?ex=6793b5d6&is=67926456&hm=1deef6d6fcd607a38969daff4b04cabb87f70d718034f21a1df5d9ee797119c4&"
+      href="https://raw.githubusercontent.com/gatofreela/gatofreela.github.io/refs/heads/main/public/gatofreela.png"
     />
     <!-- Título e Básico -->
     <title>Gato Freela - Brasil</title>
@@ -44,7 +44,7 @@ const { name, role } = Astro.props;
     />
     <meta
       name="og:image"
-      content="https://cdn.discordapp.com/attachments/1287429295156760749/1332013603443834982/22_Sem_Titulo_20250123122407.png?ex=6793b5d6&is=67926456&hm=1deef6d6fcd607a38969daff4b04cabb87f70d718034f21a1df5d9ee797119c4&"
+      content="https://raw.githubusercontent.com/gatofreela/gatofreela.github.io/refs/heads/main/public/gatofreela.png"
     />
     <meta name="og:url" content="https://gatofreela.github.io/" />
     <meta name="og:type" content="website" />
@@ -57,7 +57,7 @@ const { name, role } = Astro.props;
     />
     <meta
       name="twitter:image"
-      content="https://cdn.discordapp.com/attachments/1287429295156760749/1332013603443834982/22_Sem_Titulo_20250123122407.png?ex=6793b5d6&is=67926456&hm=1deef6d6fcd607a38969daff4b04cabb87f70d718034f21a1df5d9ee797119c4&"
+      content="https://raw.githubusercontent.com/gatofreela/gatofreela.github.io/refs/heads/main/public/gatofreela.png"
     />
     <!-- Outras Informações -->
     <meta name="generator" content={Astro.generator} />
@@ -70,7 +70,7 @@ const { name, role } = Astro.props;
     />
   </head>
   <body>
-    <div>
+    <div class="container-fluid">
       <Header />
 
       <div class="wrapper">
@@ -84,14 +84,14 @@ const { name, role } = Astro.props;
 </html>
 
 <style>
-  .wrapper {
-    max-width: 70rem;
-    margin: 2rem auto;
-    padding: 0 1rem;
+.wrapper {
+  max-width: 70rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
 
-    display: grid;
-    grid-template-columns: 256px 1fr;
-    gap: 2rem;
-    align-items: flex-start;
-  }
+  display: grid;
+  grid-template-columns: 256px 1fr;
+  gap: 2rem;
+  align-items: flex-start;
+}
 </style>

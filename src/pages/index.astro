@@ -3,111 +3,143 @@ import LayoutBase from "../layouts/LayoutBase.astro";
 ---
 
 <LayoutBase>
-  <section class="option">
-    <a href="/signup-developer">
-      <h1>Eu quero trabalhar</h1>
-      <h3>
-        Encontre <span>projetos incríveis</span> para mostrar suas habilidades!
-      </h3>
-    </a>
-  </section>
-  <section class="option">
-    <a href="/signup-client">
-      <h1>Eu quero contratar</h1>
-      <h3>Conecte-se aos <span>melhores talentos</span> para seus projetos!</h3>
-    </a>
-  </section>
+  <div class="row justify-content-center">
+    <section class="col-md-6 col-sm-12 d-flex justify-content-center">
+      <a href="/signup-developer" class="option text-center p-4">
+        <h1>Eu quero trabalhar</h1>
+        <h3>Encontre <span>projetos incríveis</span> para mostrar suas habilidades!</h3>
+      </a>
+    </section>
+
+    <section class="col-md-6 col-sm-12 d-flex justify-content-center">
+      <a href="/signup-client" class="option text-center p-4">
+        <h1>Eu quero contratar</h1>
+        <h3>Conecte-se aos <span>melhores talentos</span> para seus projetos!</h3>
+      </a>
+    </section>
+  </div>
 </LayoutBase>
+
 
 <style>
 .option {
-  width: 15.625rem;
+  margin-top: 0 !important;
+  width: 100%;
+  max-width: 15.625rem;
   height: 14.375rem;
-  background: var(--purple-400);
-  box-shadow: 0px 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
-  border-radius: 0.5rem;
-  border: 0.0625rem solid transparent;
-  display: flex;
-  padding: 1.25rem;
-  transition: border 0.3s ease-in-out;
-}
-
-.option a {
-  text-decoration: none;
-  text-align: center;
-  flex: 1;
+  background: var(--brown-400);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  border: 2px solid transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 1.5rem;
+  transition: all 0.4s ease;
+  margin: 1rem;
+  text-decoration: none;
+  overflow: hidden;
+  animation: fadeIn 1s ease-in-out;
+  cursor: pointer;
 }
 
-  .option:nth-of-type(1) {
-    margin: 4rem;
-  }
+.option::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(95, 233, 236, 0.2), transparent 70%);
+  transition: all 0.6s ease-in-out;
+  transform: scale(0);
+  z-index: 0;
+}
 
-  .option:hover {
-    border: 1px solid rgba(173, 99, 252, 0.5);
+.option:hover::before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.option:hover {
+  border: 2px solid var(--cyan-100);
+  transform: translateY(-10px) scale(1.05);
+  background: var(--purple-700);
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.6);
+}
+
+.option h1,
+.option h3 {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.option:hover h1,
+.option:hover h3 {
+  transform: scale(1.05);
+}
+
+.option h1 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+
+.option h3 {
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--gray-100);
+  max-width: 10rem;
+  word-wrap: break-word;
+}
+
+.option h3 span {
+  color: var(--cyan-100);
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .option {
+    max-width: 90%;
+    padding: 1rem;
   }
 
   .option h1 {
-    font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1rem;
-    line-height: 1.1875rem;
-    color: var(--white);
-
-    margin-bottom: 1rem;
+    font-size: 1.25rem;
   }
 
   .option h3 {
-    width: 10rem;
-
-    font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: 700;
     font-size: 1rem;
+  }
+}
 
-    word-wrap: break-word;
-    line-height: 1.1875rem;
-
-    color: var(--gray-100);
+@media (max-width: 480px) {
+  .option {
+    max-width: 100%;
+    padding: 1rem;
   }
 
-  .option h3 span {
-    color: var(--cyan-100);
+  .option h1 {
+    font-size: 1.125rem;
   }
 
-  /* Responsividade */
-  @media (max-width: 768px) {
-    .option {
-      width: 90%;
-      height: auto;
-      padding: 1rem;
-    }
-
-    .option h1 {
-      font-size: 1.125rem;
-    }
-
-    .option h3 {
-      font-size: 1rem;
-    }
+  .option h3 {
+    font-size: 0.9rem;
   }
-
-  @media (max-width: 480px) {
-    .option {
-      width: 100%;
-      padding: 1rem;
-    }
-
-    .option h1 {
-      font-size: 1.25rem;
-    }
-
-    .option h3 {
-      font-size: 1.125rem;
-    }
-  }
+}
 </style>
