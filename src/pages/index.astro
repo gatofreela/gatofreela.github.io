@@ -1,145 +1,103 @@
 ---
-import LayoutBase from "../layouts/LayoutBase.astro";
+import Layout from "@/layouts/LayoutBase.astro";
 ---
 
-<LayoutBase>
-  <div class="row justify-content-center">
-    <section class="col-md-6 col-sm-12 d-flex justify-content-center">
-      <a href="/signup-developer" class="option text-center p-4">
-        <h1>Eu quero trabalhar</h1>
-        <h3>Encontre <span>projetos incríveis</span> para mostrar suas habilidades!</h3>
-      </a>
-    </section>
+<style lang="css">
 
-    <section class="col-md-6 col-sm-12 d-flex justify-content-center">
-      <a href="/signup-client" class="option text-center p-4">
-        <h1>Eu quero contratar</h1>
-        <h3>Conecte-se aos <span>melhores talentos</span> para seus projetos!</h3>
-      </a>
-    </section>
-  </div>
-</LayoutBase>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 
-
-<style>
 .option {
-  margin-top: 0 !important;
+  position: relative;
   width: 100%;
-  max-width: 15.625rem;
-  height: 14.375rem;
-  background: var(--brown-400);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
-  border-radius: 1rem;
-  border: 2px solid transparent;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  transition: all 0.4s ease;
-  margin: 1rem;
-  text-decoration: none;
+  height: 15rem;
+  border-radius: 0.85rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  padding: 1rem;
+  border: 1.5px solid var(--orange-500);
+  transition: all 0.5s ease;
+  text-align: center;
+  color: var(--white);
   overflow: hidden;
-  animation: fadeIn 1s ease-in-out;
-  cursor: pointer;
-}
-
-.option::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(95, 233, 236, 0.2), transparent 70%);
-  transition: all 0.6s ease-in-out;
-  transform: scale(0);
-  z-index: 0;
-}
-
-.option:hover::before {
-  transform: scale(1);
-  opacity: 1;
 }
 
 .option:hover {
-  border: 2px solid var(--cyan-100);
-  transform: translateY(-10px) scale(1.05);
-  background: var(--purple-700);
-  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.6);
-}
-
-.option h1,
-.option h3 {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  transition: transform 0.3s ease-in-out;
-}
-
-.option:hover h1,
-.option:hover h3 {
-  transform: scale(1.05);
+  background-color: var(--orange-500);
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .option h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
   font-weight: 700;
-  font-size: 1.5rem;
   color: var(--white);
-  margin-bottom: 0.75rem;
+  text-shadow: 0px 1.2px 0px #555;
 }
 
 .option h3 {
-  font-weight: 500;
-  font-size: 1rem;
-  color: var(--gray-100);
-  max-width: 10rem;
-  word-wrap: break-word;
+  font-family: "Crimson Text", serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: #fff;
 }
 
-.option h3 span {
-  color: var(--cyan-100);
-  font-weight: bold;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.option span {
+  text-shadow: 0px 0.8px 0px #555;
+  font-weight: 800;
 }
 
 @media (max-width: 768px) {
   .option {
-    max-width: 90%;
-    padding: 1rem;
+    height: auto;
+    padding: 1.5rem;
   }
 
   .option h1 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 
   .option h3 {
     font-size: 1rem;
   }
 }
+  </style>
+  
+<Layout>
+<div class="text-center py-5">
+  <div class="row justify-content-center g-4">
 
-@media (max-width: 480px) {
-  .option {
-    max-width: 100%;
-    padding: 1rem;
-  }
+    <div class="col-md-6 col-sm-12">
+      <a href="/signup-developer" class="option d-flex flex-column align-items-center justify-content-center text-decoration-none">
+        <h1 class="fw-bold">
+          <i class="fas fa-laptop-code"></i> Você é um Desenvolvedor?
+        </h1>
+        <h3 class="fw-medium">
+          Conecte-se a <span>oportunidades exclusivas</span> e transforme sua paixão por tecnologia em projetos inovadores e desafiadores.
+        </h3>
+      </a>
+    </div>
 
-  .option h1 {
-    font-size: 1.125rem;
-  }
+    <div class="col-md-6 col-sm-12">
+      <a href="/signup-client" class="option d-flex flex-column align-items-center justify-content-center text-decoration-none">
+        <h1 class="fw-bold">
+          <i class="fas fa-briefcase"></i> Precisa de um Desenvolvedor?
+        </h1>
+        <h3 class="fw-medium">
+          Encontre <span>especialistas qualificados</span> para transformar suas ideias em soluções digitais de impacto.
+        </h3>
+      </a>
+    </div>
 
-  .option h3 {
-    font-size: 0.9rem;
-  }
-}
-</style>
+    <div class="col-md-6 col-sm-12">
+      <a href="https://discord.gg/yPNPxVwSHM" class="option d-flex flex-column align-items-center justify-content-center text-decoration-none">
+        <h1 class="fw-bold">
+          <i class="fas fa-code"></i> Contribua com a Plataforma
+        </h1>
+        <h3 class="fw-medium">
+          Seja um <span>contribuidor</span> no desenvolvimento da nossa plataforma, ajudando tanto no front-end quanto no back-end para tornar nossos projetos mais robustos.
+        </h3>
+      </a>
+    </div>
+  </div>
+</div>
+</Layout>

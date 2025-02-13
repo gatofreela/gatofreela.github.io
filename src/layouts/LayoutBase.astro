@@ -4,6 +4,7 @@ import "../styles/variables.css";
 import "../styles/global.css";
 
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -58,6 +59,10 @@ import Header from "../components/Header.astro";
     />
     <!-- Outras Informações -->
     <meta name="generator" content={Astro.generator} />
+    
+    <!-- Incluindo Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <!-- Pré-conexão e Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -67,19 +72,10 @@ import Header from "../components/Header.astro";
     />
   </head>
   <body>
-     <Header />
-      <main class="container">
-        <slot />
-      </main>
+   <Header />
+   <main class="container-fluid">
+    <slot />
+   </main>
+   <Footer />
   </body>
 </html>
-
-<style is:global>
-  main {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 1.25rem;
-  }
-</style>
