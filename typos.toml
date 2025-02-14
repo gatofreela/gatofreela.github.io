@@ -2,10 +2,9 @@
 check-filename = true
 
 [files]
-extend-exclude = [
-  "node_modules",
-  "build",
-  ".astro"
+extend-exclude = []
+include = [
+  "src"
 ]
 
 [default.extend-words]
