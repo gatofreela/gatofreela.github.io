@@ -1,12 +1,12 @@
 [default]
 check-filename = true
-language = ["pt", "en"]
 
 [files]
 extend-exclude = [
   "CHANGELOG.md",
   "SECURITY.md",
   "CODE_OF_CONDUCT.md",
+  "*.astro",
   "astro.config.ts",
   "package-lock.json",
   "package.json",
