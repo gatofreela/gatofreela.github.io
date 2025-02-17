@@ -3,51 +3,15 @@ import LayoutHome from "../layouts/LayoutHome.astro";
 ---
 
 <LayoutHome>
-  <article class="module">
-    <header class="about">
-      <h1>
-        Conecte-se aos <span>Melhores Talentos</span> Remotos da América Latina com o Gato Freela!
-      </h1>
-      <p>
-        Desenvolva seu negócio de forma rápida e sustentável. Nós conectamos
-        você a milhares de profissionais que falam sua língua e trabalham no seu
-        fuso horário.
-      </p>
-    </header>
-  </article>
+  <article class="container-fluid d-flex justify-content-center align-items-start mt-4">
+  <div class="bg-dark text-light p-4 rounded shadow-lg animate__animated animate__fadeInDown" style="max-width: 600px;">
+    <h1 class="fs-3 fw-bold text-center">
+      Conecte-se aos <span class="text-info">Melhores Talentos</span> Remotos da América Latina com o Gato Freela!
+    </h1>
+    <p class="mt-3 text-center text-secondary">
+      Desenvolva seu negócio de forma rápida e sustentável. Nós conectamos 
+      você a milhares de profissionais que falam sua língua e trabalham no seu fuso horário.
+    </p>
+  </div>
+</article>
 </LayoutHome>
-
-<style>
-  .module {
-    margin: 2rem 0 2rem 8rem;
-    padding: 2rem;
-    background: var(--purple-900);
-    width: 38rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  /* About styles */
-  .about {
-    text-align: left;
-  }
-
-  .about h1 {
-    font-size: 2.313rem;
-    color: var(--white);
-    font-weight: 700;
-    line-height: 1.4;
-  }
-
-  .about h1 span {
-    color: var(--cyan-100);
-  }
-
-  .about p {
-    margin-top: 1rem;
-    font-size: 1rem;
-    color: var(--gray-300);
-    line-height: 1.5;
-  }
-
-</style>

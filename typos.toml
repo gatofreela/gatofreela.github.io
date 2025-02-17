@@ -3,13 +3,28 @@ check-filename = true
 
 [files]
 extend-exclude = [
-  "node_modules",
+  "CHANGELOG.md",
+  "SECURITY.md",
+  "CODE_OF_CONDUCT.md",
+  "*.astro",
+  "astro.config.ts",
+  "package-lock.json",
+  "package.json",
+  "CONTRIBUTING.md",
+  "biome.json",
+  "FRONTEND.md",
   "build",
-  ".astro"
+  "LICENSE",
+  "commitlint.config.js",
+  "tsconfig.json",
+  "README.md",
+  "node_modules",
+  "typos.toml",
+  "public"
 ]
 
 [default.extend-words]
-strech = "strech"
-contaienr = "contaienr"
-collapsable = "collapsable"
-styl = "styl"
+stretch = "stretch"
+container = "container"
+collapsible = "collapsible"
+style = "style"

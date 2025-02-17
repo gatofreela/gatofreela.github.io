@@ -7,10 +7,12 @@ import react from "@astrojs/react";
 export default defineConfig({
   output: "static",
   outDir: "build",
-
+  build: {
+    sourcemap: false,
+  },
   server: {
     port: 8080,
-    host: true,
+    host: false,
   },
 
   integrations: [

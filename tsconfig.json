@@ -3,6 +3,10 @@
   "include": [".astro/types.d.ts", "**/*"],
   "exclude": ["build/", "node_modules/"],
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@*": ["src/*"]
+    },
     "types": ["astro/client"],
     "jsx": "react-jsx",
     "jsxImportSource": "react"

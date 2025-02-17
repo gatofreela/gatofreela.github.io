@@ -4,6 +4,7 @@ import "../styles/variables.css";
 import "../styles/global.css";
 
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -20,10 +21,11 @@ import Header from "../components/Header.astro";
     <link
       rel="icon"
       type="image/png"
-      href="https://cdn.discordapp.com/attachments/1287429295156760749/1332013603443834982/22_Sem_Titulo_20250123122407.png?ex=6793b5d6&is=67926456&hm=1deef6d6fcd607a38969daff4b04cabb87f70d718034f21a1df5d9ee797119c4&"
+      href="https://raw.githubusercontent.com/gatofreela/gatofreela.github.io/refs/heads/main/public/gatofreela.png"
     />
     <!-- Título e Básico -->
     <title>Gato Freela - Brasil</title>
+    <meta name="theme-color" content="#ce854e">
     <meta name="robots" content="index, follow" />
     <meta
       name="description"
@@ -41,7 +43,7 @@ import Header from "../components/Header.astro";
     />
     <meta
       name="og:image"
-      content="https://cdn.discordapp.com/attachments/1287429295156760749/1332013603443834982/22_Sem_Titulo_20250123122407.png?ex=6793b5d6&is=67926456&hm=1deef6d6fcd607a38969daff4b04cabb87f70d718034f21a1df5d9ee797119c4&"
+      content="https://raw.githubusercontent.com/gatofreela/gatofreela.github.io/refs/heads/main/public/gatofreela.png"
     />
     <meta name="og:url" content="https://gatofreela.github.io/" />
     <meta name="og:type" content="website" />
@@ -54,10 +56,16 @@ import Header from "../components/Header.astro";
     />
     <meta
       name="twitter:image"
-      content="https://cdn.discordapp.com/attachments/1287429295156760749/1332013603443834982/22_Sem_Titulo_20250123122407.png?ex=6793b5d6&is=67926456&hm=1deef6d6fcd607a38969daff4b04cabb87f70d718034f21a1df5d9ee797119c4&"
+      content="https://raw.githubusercontent.com/gatofreela/gatofreela.github.io/refs/heads/main/public/gatofreela.png"
     />
     <!-- Outras Informações -->
     <meta name="generator" content={Astro.generator} />
+    
+    <!-- Incluindo Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+   
     <!-- Pré-conexão e Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -67,21 +75,10 @@ import Header from "../components/Header.astro";
     />
   </head>
   <body>
-    <div>
-      <Header />
-      <main>
-        <slot />
-      </main>
-    </div>
+   <Header />
+   <main class="container-fluid">
+    <slot />
+   </main>
+   <Footer />
   </body>
 </html>
-
-<style>
-  main {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 1.25rem;
-  }
-</style>

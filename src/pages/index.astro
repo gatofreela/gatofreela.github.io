@@ -1,113 +1,103 @@
 ---
-import LayoutBase from "../layouts/LayoutBase.astro";
+import Layout from "@/layouts/LayoutBase.astro";
 ---
 
-<LayoutBase>
-  <section class="option">
-    <a href="/signup-developer">
-      <h1>Eu quero trabalhar</h1>
-      <h3>
-        Encontre <span>projetos incríveis</span> para mostrar suas habilidades!
-      </h3>
-    </a>
-  </section>
-  <section class="option">
-    <a href="/signup-client">
-      <h1>Eu quero contratar</h1>
-      <h3>Conecte-se aos <span>melhores talentos</span> para seus projetos!</h3>
-    </a>
-  </section>
-</LayoutBase>
+<style lang="css">
 
-<style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
 .option {
-  width: 15.625rem;
-  height: 14.375rem;
-  background: var(--purple-400);
-  box-shadow: 0px 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
-  border-radius: 0.5rem;
-  border: 0.0625rem solid transparent;
-  display: flex;
-  padding: 1.25rem;
-  transition: border 0.3s ease-in-out;
-}
-
-.option a {
-  text-decoration: none;
+  position: relative;
+  width: 100%;
+  height: 15rem;
+  border-radius: 0.85rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  padding: 1rem;
+  border: 1.5px solid var(--orange-500);
+  transition: all 0.5s ease;
   text-align: center;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  color: var(--white);
+  overflow: hidden;
 }
 
-  .option:nth-of-type(1) {
-    margin: 4rem;
-  }
+.option:hover {
+  background-color: var(--orange-500);
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
 
-  .option:hover {
-    border: 1px solid rgba(173, 99, 252, 0.5);
+.option h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--white);
+  text-shadow: 0px 1.2px 0px #555;
+}
+
+.option h3 {
+  font-family: "Crimson Text", serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: #fff;
+}
+
+.option span {
+  text-shadow: 0px 0.8px 0px #555;
+  font-weight: 800;
+}
+
+@media (max-width: 768px) {
+  .option {
+    height: auto;
+    padding: 1.5rem;
   }
 
   .option h1 {
-    font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1rem;
-    line-height: 1.1875rem;
-    color: var(--white);
-
-    margin-bottom: 1rem;
+    font-size: 1.5rem;
   }
 
   .option h3 {
-    width: 10rem;
-
-    font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: 700;
     font-size: 1rem;
-
-    word-wrap: break-word;
-    line-height: 1.1875rem;
-
-    color: var(--gray-100);
   }
+}
+  </style>
+  
+<Layout>
+<div class="text-center py-5">
+ <div class="row justify-content-center g-4">
 
-  .option h3 span {
-    color: var(--cyan-100);
-  }
+  <div class="col-md-6 col-sm-12">
+    <a href="/signup-developer" class="option d-flex flex-column align-items-center justify-content-center text-decoration-none animate__animated animate__fadeInRight">
+      <h1 class="fw-bold">
+        <i class="fas fa-laptop-code"></i> Você é um Desenvolvedor?
+      </h1>
+      <h3 class="fw-medium">
+        Conecte-se a <span>oportunidades exclusivas</span> e transforme sua paixão por tecnologia em projetos inovadores e desafiadores.
+      </h3>
+    </a>
+  </div>
 
-  /* Responsividade */
-  @media (max-width: 768px) {
-    .option {
-      width: 90%;
-      height: auto;
-      padding: 1rem;
-    }
+  <div class="col-md-6 col-sm-12">
+    <a href="/signup-client" class="option d-flex flex-column align-items-center justify-content-center text-decoration-none animate__animated animate__bounceIn">
+      <h1 class="fw-bold">
+        <i class="fas fa-briefcase"></i> Precisa de um Desenvolvedor?
+      </h1>
+      <h3 class="fw-medium">
+        Encontre <span>especialistas qualificados</span> para transformar suas ideias em soluções digitais de impacto.
+      </h3>
+    </a>
+  </div>
 
-    .option h1 {
-      font-size: 1.125rem;
-    }
-
-    .option h3 {
-      font-size: 1rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .option {
-      width: 100%;
-      padding: 1rem;
-    }
-
-    .option h1 {
-      font-size: 1.25rem;
-    }
-
-    .option h3 {
-      font-size: 1.125rem;
-    }
-  }
-</style>
+  <div class="col-md-6 col-sm-12">
+    <a href="https://discord.gg/yPNPxVwSHM" class="option d-flex flex-column align-items-center justify-content-center text-decoration-none animate__animated animate__fadeInLeft">
+      <h1 class="fw-bold">
+        <i class="fas fa-code"></i> Contribua com a Plataforma
+      </h1>
+      <h3 class="fw-medium">
+        Seja um <span>contribuidor</span> no desenvolvimento da nossa plataforma, ajudando tanto no front-end quanto no back-end para tornar nossos projetos mais robustos.
+      </h3>
+    </a>
+  </div>
+</div>
+</div>
+</Layout>
