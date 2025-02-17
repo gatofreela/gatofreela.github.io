@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Gato Freela - Brasil</h1>
-  <img alt="icon" src="https://raw.githubusercontent.com/gatofreela/gatofreela.github.io/refs/heads/main/public/gatofreela.png" width="40%" />
+  <img alt="icon" src="https://raw.githubusercontent.com/gatofreela/gatofreela.github.io/refs/heads/main/public/icon.png" width="40%" />
   <p>
     <b>🐾 Gato Freela</b> <i>é a plataforma ideal para conectar freelancers a clientes de forma simples e confiável!</i>
   </p>
